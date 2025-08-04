@@ -9,5 +9,8 @@ def list_tasks(status=None):
             return
         status = status.replace("-", " ").title()
         tasks = [task for task in tasks if task['status'] == status]
+    if tasks == []:
+        print("No tasks found.")
+        return
     for task in tasks:
         print(f"ID: {task['id']}, Task: {task['task']}, Status: {task['status']}")

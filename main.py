@@ -5,6 +5,9 @@ from utils.list_tasks import list_tasks
 from utils.delete_task import delete_task
 from utils.update_task import update_task
 from utils.change_status import change_task_status
+from utils.verify_json_file import verify_json_file
+
+verify_json_file("tasks.json")
 
 parser = argparse.ArgumentParser(prog="Task Tracker", description="Task Tracker CLI", epilog="Use this tool to manage your tasks.")
 parser.add_argument("-add", help="Add a new task to the task list", type=str)
