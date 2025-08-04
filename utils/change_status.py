@@ -1,17 +1,12 @@
 from utils.get_tasks import get_tasks
 import json
 
-def update_task(id, task_updated):
-    try:
-        id = int(id)
-    except ValueError:
-        print("Invalid ID. Please provide a valid integer ID.")
-        return
+def change_task_status(id, new_status):
     tasks = get_tasks()
     task_founded = False
     for task in tasks:
         if task['id'] == id:
-            task['task'] = task_updated
+            task['status'] = new_status
             task_founded = True
             break
     if not task_founded:
