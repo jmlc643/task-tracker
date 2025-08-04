@@ -1,5 +1,6 @@
 from utils.get_tasks import get_tasks
 import json
+from datetime import datetime
 
 def update_task(id, task_updated):
     try:
@@ -12,6 +13,7 @@ def update_task(id, task_updated):
     for task in tasks:
         if task['id'] == id:
             task['task'] = task_updated
+            task['updated_at'] = datetime.now().isoformat()
             task_founded = True
             break
     if not task_founded:

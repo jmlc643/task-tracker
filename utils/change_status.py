@@ -1,5 +1,6 @@
 from utils.get_tasks import get_tasks
 import json
+from datetime import datetime
 
 def change_task_status(id, new_status):
     tasks = get_tasks()
@@ -7,6 +8,7 @@ def change_task_status(id, new_status):
     for task in tasks:
         if task['id'] == id:
             task['status'] = new_status
+            task['updated_at'] = datetime.now().isoformat()
             task_founded = True
             break
     if not task_founded:

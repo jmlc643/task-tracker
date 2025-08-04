@@ -1,4 +1,3 @@
-import json
 from utils.get_tasks import get_tasks
 
 def list_tasks(status=None):
@@ -13,4 +12,4 @@ def list_tasks(status=None):
         print("No tasks found.")
         return
     for task in tasks:
-        print(f"ID: {task['id']}, Task: {task['task']}, Status: {task['status']}")
+        print(f"ID: {task['id']}, Task: {task['task']}, Status: {task['status']}, Created At: {task['created_at']}, Updated At: {task['updated_at']}")

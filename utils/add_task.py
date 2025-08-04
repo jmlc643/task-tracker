@@ -1,5 +1,6 @@
 import json
 from utils.get_tasks import get_tasks
+from datetime import datetime
 
 def add_task(task):
     tasks = get_tasks()
@@ -9,7 +10,7 @@ def add_task(task):
     else:
         id = max(task['id'] for task in tasks) + 1
     
-    new_task = { "id": id, "task": task, "status": "To Do" }
+    new_task = { "id": id, "task": task, "status": "To Do", "created_at": datetime.now().isoformat(), "updated_at": None }
     
     tasks.append(new_task)
 
