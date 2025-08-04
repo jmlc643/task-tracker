@@ -1,17 +1,8 @@
-import os
 import json
+from utils.get_tasks import get_tasks
 
 def add_task(task):
-    try:
-        with open("tasks.json", 'r') as file:
-            content = file.read().strip()
-            if not content:
-                tasks = []
-            else:
-                file.seek(0)
-                tasks = json.load(file)
-    except (FileNotFoundError, json.JSONDecodeError) as e:
-        print(e)
+    tasks = get_tasks()
     
     if tasks == []:
         id = 1
