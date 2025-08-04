@@ -9,7 +9,7 @@ def add_task(task):
     else:
         id = max(task['id'] for task in tasks) + 1
     
-    new_task = { "id": id, "task": task }
+    new_task = { "id": id, "task": task, "status": "To Do" }
     
     tasks.append(new_task)
 
